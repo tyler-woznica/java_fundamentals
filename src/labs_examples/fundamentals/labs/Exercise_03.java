@@ -14,7 +14,7 @@ public class Exercise_03 {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World!");
+        System.out.println("Hello World!\nCheck out my first program!");
 
         // write code to print out "Check out my first Java program!" below
 
