@@ -28,6 +28,4 @@ public class Exercise_05 {
         System.out.println("str3 combines str and str2: " + str3);
         System.out.println("strcontain checks if str contains an exclamation point: " + strcontain);
     }
-        
-
 }
