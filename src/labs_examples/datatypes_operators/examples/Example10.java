@@ -1,7 +1,7 @@
 package labs_examples.datatypes_operators.examples;
 
 /*
-   This program attempts to declared a variable
+   This program attempts to declare a variable
    in an inner scope with the same name as one
    defined in an outer scope.
 
@@ -9,7 +9,7 @@ package labs_examples.datatypes_operators.examples;
 */
 
 /*
-complies but enters infinite for loop because
+compiles but enters infinite for loop because
 count keeps getting reset to 0
 
 Update- does not compile when i is reinitialized
