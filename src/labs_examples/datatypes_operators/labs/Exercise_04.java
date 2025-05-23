@@ -9,16 +9,25 @@ package labs_examples.datatypes_operators.labs;
 class RelationalOperators {
 
     public static void main(String[] args) {
-
         // example of "less than"
         int a = 1;
         int b = 2;
         if (a < b){
             System.out.println("a is less than b");
         }
-
         // write your code below
-
+        if (a <= b){
+            System.out.println("a is less than or equal to b");
+        }
+        if (b > a){
+            System.out.println("b is greater than a");
+        }
+        if (b >= a){
+            System.out.println("b is greater than or equal to a");
+        }
+        if (b != a){
+            System.out.println("b does not equal a");
+        }
     }
 
 }
