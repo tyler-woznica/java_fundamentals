@@ -8,4 +8,17 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_06 {
+    public static void main(String[] args) {
+
+        int x = 1;
+        int y = 100;
+        int sum = 0;
+
+        while (x <= 100) {
+            sum += x;
+            x++;
+        }
+
+        System.out.println("The summation of 1 through 100 is: " + sum);
+    }
 }
