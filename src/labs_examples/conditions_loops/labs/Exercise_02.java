@@ -37,7 +37,7 @@ public class Exercise_02 {
                 System.out.println("6 corresponds to Friday!");
             } else if (daynum == 7) {
                 System.out.println("7 corresponds to Saturday!");
-            } 
+            }
         }
 
         if (daynum < 1 | daynum > 7) {
