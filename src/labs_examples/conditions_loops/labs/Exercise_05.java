@@ -17,12 +17,32 @@ import java.util.Scanner;
 
 public class Exercise_05 {
     public static void main(String[] args) {
+
         System.out.println("Enter two integers when prompted to calculate the summation and average.");
+
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Please enter the lower number (lower bound): ");
         int lowerint = scanner1.nextInt();
+
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Please enter the higher number (upper bound): ");
         int upperint = scanner2.nextInt();
+
+        int sum = 0;
+        if (lowerint < upperint) {
+            for (int i = lowerint; i <= upperint; i++) {
+                sum += i;
+            }
+        } else {
+            System.out.println("The first number entered is not lower than the second.");
+        }
+
+        float avg = 0f;
+        if (lowerint < upperint) {
+            avg = ((float) lowerint + (float) upperint) / 2;
+        }
+
+        System.out.println("The sum of the lower and upper bounds is: " + sum);
+        System.out.println("The average of the lower and upper bounds is: " + avg);
     }
 }
