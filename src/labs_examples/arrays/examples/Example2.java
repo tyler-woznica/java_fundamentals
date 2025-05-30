@@ -2,7 +2,7 @@ package labs_examples.arrays.examples;
 
 // Find the minimum and maximum values in an array.
 class MinMax {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int nums[] = new int[10];
         int min, max;
 
