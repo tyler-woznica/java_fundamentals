@@ -1,13 +1,14 @@
 package labs_examples.conditions_loops.examples;
 
-/*
+import java.io.IOException;
 
+/*
    The finished Java statement Help system
    that processes multiple requests.
 */
 class Help3 {
     public static void main(String[] args)
-            throws java.io.IOException {
+            throws IOException {
         char choice, ignore;
 
         for(;;) {
