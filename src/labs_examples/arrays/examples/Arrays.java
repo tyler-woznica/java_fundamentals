@@ -7,7 +7,7 @@ class Arrays {
     public static void main(String[] args) {
         // declare and initialize array size 10
         int nums[] = new int[10];
-        int min, max;
+        int min = 0, max = 0;
 
         // populate array
         nums[0] = 99;
@@ -21,9 +21,8 @@ class Arrays {
         nums[8] = 287;
         nums[9] = 49;
 
-        min = max = 0;
         // check for min and max
-        for(int i=0; i < 10; i++) {
+        for(int i=0; i < nums.length; i++) {
             if(nums[i] < min)
                 min = nums[i];
             if(nums[i] > max)
