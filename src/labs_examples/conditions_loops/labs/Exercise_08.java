@@ -12,9 +12,9 @@ public class Exercise_08 {
 
         int i = 1000;
 
-        while (i >= 1) {
+        do  {
             System.out.println(i);
             i -= 3;
-        }
+        } while (i >= 1);
     }
 }
