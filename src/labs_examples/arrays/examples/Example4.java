@@ -2,7 +2,7 @@ package labs_examples.arrays.examples;
 
 // Demonstrate an array overrun.
 class ArrayErr {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int sample[] = new int[10];
         int i;
 
