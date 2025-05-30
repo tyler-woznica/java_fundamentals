@@ -24,9 +24,9 @@ public class Exercise_05 {
         System.out.println("Please enter the lower number (lower bound): ");
         int lowerint = scanner1.nextInt();
 
-        Scanner scanner2 = new Scanner(System.in);
+        // Scanner scanner2 = new Scanner(System.in);
         System.out.println("Please enter the higher number (upper bound): ");
-        int upperint = scanner2.nextInt();
+        int upperint = scanner1.nextInt();
 
         int sum = 0;
         if (lowerint < upperint) {
@@ -35,12 +35,11 @@ public class Exercise_05 {
             }
         } else {
             System.out.println("The first number entered is not lower than the second.");
+            return;
         }
 
         float avg = 0f;
-        if (lowerint < upperint) {
-            avg = ((float) lowerint + (float) upperint) / 2;
-        }
+        avg = ((float) lowerint + (float) upperint) / 2;
 
         System.out.println("The sum of the lower and upper bounds is: " + sum);
         System.out.println("The average of the lower and upper bounds is: " + avg);
