@@ -4,7 +4,7 @@ package labs_examples.arrays.examples;
 class MinMax {
     public static void main(String[] args) {
         int nums[] = new int[10];
-        int min, max;
+        int min = 0, max = 0;
 
         nums[0] = 99;
         nums[1] = -10;
@@ -16,8 +16,7 @@ class MinMax {
         nums[7] = -9;
         nums[8] = 287;
         nums[9] = 49;
-
-        min = max = 0;
+        
         for(int i=0; i < 10; i++) {
             if(nums[i] < min)
                 min = nums[i];
