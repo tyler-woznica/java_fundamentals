@@ -24,16 +24,16 @@ class Ragged {
                 riders[i][j] = i + j + 10;
 
         System.out.println("Riders per trip during the week:");
-        for(i=0; i < 5; i++) {
-            for(j=0; j < 10; j++)
+        for(i = 0; i < 5; i++) {
+            for(j = 0; j < 10; j++)
                 System.out.print(riders[i][j] + " ");
             System.out.println();
         }
         System.out.println();
 
         System.out.println("Riders per trip on the weekend:");
-        for(i=5; i < 7; i++) {
-            for(j=0; j < 2; j++)
+        for(i = 5; i < 7; i++) {
+            for(j = 0; j < 2; j++)
                 System.out.print(riders[i][j] + " ");
             System.out.println();
         }
