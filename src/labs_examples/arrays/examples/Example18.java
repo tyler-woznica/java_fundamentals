@@ -2,21 +2,21 @@ package labs_examples.arrays.examples;
 
 // Some String operations.
 class StrOps {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String str1 = "When it comes to programming, Java is #1.";
         String str2 = "When it comes to programming, Java is #1.";
         String str3 = "Java strings are powerful.";
         int result, idx;
 
         if (str1.equalsIgnoreCase(str2)){
-            System.out.println("this shouldn't print");
+            System.out.println("this shouldn't print"); // Ty: This does print
         }
 
         System.out.println("Length of str1: " +
                 str1.length());
 
         // display str1, one char at a time.
-        for(int i=0; i < str1.length(); i++)
+        for(int i = 0; i < str1.length(); i++)
             System.out.print(str1.charAt(i));
 
         System.out.println();
