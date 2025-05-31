@@ -5,13 +5,12 @@ package labs_examples.arrays.examples;
 */
 
 class Bubble {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String str[] = {"this", "is", "a", "bubble", "sort!"};
 
         int a, b;
         int size;
         String t;
-
 
         // display original array
         System.out.print("Original array is:");
