@@ -12,8 +12,8 @@ class TwoD {
             }
         }
 
-        for(t=0; t < 3; t++) {
-            for(i=0; i < 4; i++) {
+        for(t = 0; t < 3; t++) {
+            for(i = 0; i < 4; i++) {
                 System.out.print(table[t][i] + " ");
             }
             System.out.println();
