@@ -2,7 +2,7 @@ package labs_examples.arrays.examples;
 
 // Introduce String.
 class StringDemo {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // declare strings in various ways
         String str1 = new String("Java strings are objects.");
         String str2 = "They are constructed various ways.";
