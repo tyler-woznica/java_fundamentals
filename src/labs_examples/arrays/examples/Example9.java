@@ -1,5 +1,7 @@
 package labs_examples.arrays.examples;
 
+// Why do for loops not need {}?
+
 // Assigning array reference variables.
 class AssignARef {
     public static void main(String[] args) {

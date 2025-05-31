@@ -1,5 +1,7 @@
 package labs_examples.arrays.examples;
 
+// Talk about bubble sort.
+
 /*
    Demonstrate the Bubble sort.
 */
