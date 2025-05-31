@@ -2,7 +2,7 @@ package labs_examples.arrays.examples;
 
 // Assigning array reference variables.
 class AssignARef {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int i;
 
         int nums1[] = new int[10];
