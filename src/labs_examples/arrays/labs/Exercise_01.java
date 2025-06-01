@@ -14,4 +14,10 @@ import java.util.Arrays;
 
 public class Exercise_01 {
 
+    int[] nums = new [10];
+    //need to take in user input for 10 numbers
+    int sum;
+    float avg;
+    //for (int i : nums)
+
 }
