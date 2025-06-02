@@ -20,16 +20,19 @@ public class Exercise_03 {
     public static void main(String[] args) {
 
         int[][] twoDArray = new int[5][5];
+        int val = 3;
 
-        for (int x; x < twoDArray.length; x++) {
-            for (int y = 0; y < twoDArray.length; y++) {
-                twoDArray[x][y] = x * y;
+        for (int i = 0; i < twoDArray.length; i++) {
+            for (int j = 0; j < twoDArray[i].length; j++) {
+                twoDArray[i][j] = val;
+                val += 3;
             }
         }
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                
+        for (int[] int1 : twoDArray) {
+            for (int int2 : int1) {
+                System.out.print(int2 + "\t");
             }
+            System.out.println();
         }
     }
 }
