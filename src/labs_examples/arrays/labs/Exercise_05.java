@@ -12,20 +12,21 @@ public class Exercise_05 {
 
     public static void main(String[] args) {
 
-        int[][] twoD = new int[3][3];
-        int val = 1;
+        int[][] twoD = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
 
-        for (int i = 0; i < twoD.length; i++) {
-            for (int j = 0; j < twoD[i].length; j++) {
-                twoD[i][j] = val;
-                val += 1;
+        int count = 0;
+
+        for (int i = 2; i >= 0; i--) {
+            for (int j = 2; j >= 0; j--) {
+                if (count % 2 == 0) {
+                    System.out.print(twoD[i][j] + " ");
+                }
+                count++;
             }
-        }
-        for (int[] int1 : twoD) {
-            for (int int2 : int1) {
-                System.out.print(int2 + "\t");
-            }
-            System.out.println();
         }
     }
 }
