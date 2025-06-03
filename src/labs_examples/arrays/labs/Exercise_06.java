@@ -22,6 +22,9 @@ public class Exercise_06 {
         // Question: in the for loop below, why do we divide "nums.length" by 2?
         for(int i = 0; i < nums.length / 2; i++){
             // swap elements at indexes in array
+            temp = nums[i];
+            nums[i] = nums[nums.length - i - 1];
+            nums[nums.length - i - 1] = temp;
             // you have two indices readily available for you to use "i" (which increments) and "nums.length"
             // you've also got this "temp" variable you can use to hold a value temporarily
         }
@@ -31,5 +34,4 @@ public class Exercise_06 {
             System.out.print(i + " ");
         }
     }
-
 }
