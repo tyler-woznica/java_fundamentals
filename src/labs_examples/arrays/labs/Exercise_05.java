@@ -10,4 +10,12 @@ package labs_examples.arrays.labs;
 
 public class Exercise_05 {
 
+    public static void main(String[] args) {
+
+        // create array
+
+        // populate array
+
+        // iterate backwards through the array
+    }
 }
