@@ -12,10 +12,20 @@ public class Exercise_05 {
 
     public static void main(String[] args) {
 
-        // create array
+        int[][] twoD = new int[3][3];
+        int val = 1;
 
-        // populate array
-
-        // iterate backwards through the array
+        for (int i = 0; i < twoD.length; i++) {
+            for (int j = 0; j < twoD[i].length; j++) {
+                twoD[i][j] = val;
+                val += 1;
+            }
+        }
+        for (int[] int1 : twoD) {
+            for (int int2 : int1) {
+                System.out.print(int2 + "\t");
+            }
+            System.out.println();
+        }
     }
 }
