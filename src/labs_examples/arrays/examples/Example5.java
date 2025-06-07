@@ -8,11 +8,14 @@ package labs_examples.arrays.examples;
 
 class Bubble {
     public static void main(String[] args) {
-        String str[] = {"this", "is", "a", "bubble", "sort!"};
+        String str[] = {"this", "is", "a", "bubble", "sort"};
 
         int a, b;
         int size;
         String t;
+
+        // 0 0 1 0 1 1 0 0
+        // 0 0 0 1 0 0 1 1
 
         // display original array
         System.out.print("Original array is:");
@@ -24,6 +27,9 @@ class Bubble {
         // This is the bubble sort.
         for(a=1; a < str.length; a++) {
             for (b = str.length - 1; b >= a; b--) {
+                if (a == 4) {
+                    System.out.println();
+                }
                 if (str[b - 1].compareTo(str[b]) > 1) { // if out of order
                     t = str[b - 1];
                     str[b - 1] = str[b];

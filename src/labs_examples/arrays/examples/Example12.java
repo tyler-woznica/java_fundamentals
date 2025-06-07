@@ -1,5 +1,7 @@
 package labs_examples.arrays.examples;
 
+// REVISIT
+
 /*
    A queue class for characters.
 */
