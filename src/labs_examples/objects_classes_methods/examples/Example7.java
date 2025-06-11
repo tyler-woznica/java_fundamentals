@@ -2,10 +2,7 @@ package labs_examples.objects_classes_methods.examples;
 
 class Factor {
     boolean isFactor(int a, int b) {
-        if( (b % a) == 0)
-            return true;
-        else
-            return false;
+        return (b % a) == 0;
     }
 }
 
