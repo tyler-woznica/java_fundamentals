@@ -10,7 +10,7 @@ class Factor {
 }
 
 class IsFact {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Factor x = new Factor();
 
         if(x.isFactor(2, 20)) System.out.println("2 is factor");
