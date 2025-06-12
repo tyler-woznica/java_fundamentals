@@ -3,10 +3,20 @@ package labs_examples.objects_classes_methods.labs.objects;
 public class Exercise_01 {
 
     public static void main(String[] args) {
+        Engine engine = new Engine("GE", 2, "Turbofan");
+        Wings wings = new Wings(60, true);
 
+        System.out.println("Engine info: " + engine);
+        System.out.println("Wings info: " + wings);
+
+        if (engine.getBrand().equals("GE")) {
+            wings.setSpan(65);
+        }
+
+        System.out.println("Updated wing info after engine type: " + wings);
     }
 
-class Engine {
+static class Engine {
     private String brand;
     private int quantity;
     private String type;
@@ -30,7 +40,7 @@ class Engine {
     }
 }
 
-class Wings {
+static class Wings {
     private int span;
     private boolean painted;
 
