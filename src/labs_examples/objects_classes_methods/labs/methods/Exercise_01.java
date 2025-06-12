@@ -14,6 +14,7 @@ public class Exercise_01 {
         System.out.println("10 / 5 = " + divide(10, 5));
         joke();
         secYear(2);
+        System.out.println("Number of arguments: " + countArgs(1, 2, 3, 4, 5));
 
     }
 
