@@ -46,21 +46,4 @@ class Airplane {
     double currentfuel;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
