@@ -2,7 +2,7 @@ package labs_examples.objects_classes_methods.labs.objects.ex03;
 
 public class Student {
     private String name;
-    private Course course;  // Association: Student has a Course
+    private Course course;
 
     public Student(String name) {
         this.name = name;
