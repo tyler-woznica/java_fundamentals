@@ -1,7 +1,7 @@
 
 Without running the code below, please tell me what it will print.
 
-"Child called", because the method in Child overrides the method in c. 
+"Child called", because the method in Child overrides the method in c.
 
 public class InheritanceTest
 {
