@@ -12,7 +12,6 @@ public class Generator {
         this.manufacturer = manufacturer;
         this.cooling = cooling;
         this.gencost = gencost;
-        
     }
 
     public double getOutput() {
