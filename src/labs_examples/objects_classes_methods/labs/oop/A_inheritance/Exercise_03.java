@@ -4,7 +4,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
  * Why does the output print in the order it does?
  *
  * You answer:
- *
+ * Because the parent constructors are called first. C_1 calls B_1 which calls A_1.
  */
 
 class A_1 {

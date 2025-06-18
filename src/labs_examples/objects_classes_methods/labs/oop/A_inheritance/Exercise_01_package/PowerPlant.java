@@ -1,12 +1,15 @@
 package labs_examples.objects_classes_methods.labs.oop.A_inheritance.Exercise_01_package;
 
-public class PowerPlant {
+public class PowerPlant extends EnergySource {
+    protected int capacityMW;
 
-    int turbinenum;
-    double totaloutput;
-    int personnel;
-    double acreage;
-    int totalcost;
-    int buildcost;
+    public PowerPlant(String sourceType, int capacityMW) {
+        super(sourceType);
+        this.capacityMW = capacityMW;
+    }
 
+    @Override
+    public String describe() {
+        return super.describe() + ", Plant capacity: " + capacityMW + " MW";
+    }
 }
