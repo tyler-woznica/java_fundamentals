@@ -1,11 +1,10 @@
 package labs_examples.objects_classes_methods.labs.oop.A_inheritance.Exercise_01_package;
 
-public class PlantController {
+public class FuelType {
 
-    public static void main(String[] args) {
+    String fueltype;
+    int fuelcost;
+    boolean fuelcooling;
 
-
-
-    }
 
 }

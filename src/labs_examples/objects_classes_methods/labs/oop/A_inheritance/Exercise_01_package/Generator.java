@@ -2,5 +2,9 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance.Exercise_01
 
 public class Generator {
 
+    double output; // megawatts (MW)
+    String manufacturer;
+    String cooling;
+    int gencost;
 
 }
