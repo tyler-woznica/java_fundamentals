@@ -3,7 +3,7 @@ Without running the code below, please tell me what will print. Why?
 
 Parent called
 Child called
-This happens because the constructors execute with the parent class first. 
+This happens because the constructors execute with the parent class first.
 
 
 public class InheritanceTest
