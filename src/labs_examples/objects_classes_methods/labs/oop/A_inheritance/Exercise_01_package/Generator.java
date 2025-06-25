@@ -10,6 +10,7 @@ public class Generator extends PowerPlant {
 
     @Override
     public String describe() {
+        System.out.println(sourceType);
         return super.describe() + ", Generator type: " + generatorType;
     }
 }
