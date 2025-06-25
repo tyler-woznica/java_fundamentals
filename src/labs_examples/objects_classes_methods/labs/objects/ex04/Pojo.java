@@ -6,7 +6,7 @@ public class Pojo {
     public int y;
     public double z;
 
-    public Pojo(int x, int y, double b) {
+    public Pojo(int x, int y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;

@@ -22,4 +22,3 @@ public class Exercise_03 {
         }
     }
 }
-
