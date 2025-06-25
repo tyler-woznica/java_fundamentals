@@ -6,7 +6,7 @@ public class BlackjackController {
 
         Deck deck = new Deck();
         deck.populateDeck();
-        deck.printDeck();
+        deck.printDeck(); // test populate
     }
 
 }
