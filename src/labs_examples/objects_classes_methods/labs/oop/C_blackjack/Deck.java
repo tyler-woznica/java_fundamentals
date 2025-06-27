@@ -12,7 +12,7 @@ public class Deck {
         populateDeck();
     }
 
-    public void populateDeck () {
+    private void populateDeck () {
         int index = 0;
         for (char suit : Card.suits) {
             for (int value = 1; value <= 13; value ++) {
@@ -21,11 +21,11 @@ public class Deck {
         }
     }
 
-    public void printDeck() {
-        for (Card card : cards) {
-            System.out.println(card);
-        }
-    }
+//    public void printDeck() {
+//        for (Card card : cards) {
+//            System.out.println(card);
+//        }
+//    }
 
     public Card deal() {
         Random rand = new Random();
@@ -36,6 +36,4 @@ public class Deck {
         usedCards.add(n);
         return cards[n];
     }
-
-
 }
