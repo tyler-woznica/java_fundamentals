@@ -51,11 +51,4 @@ public class Deck {
         this.usedCards = usedCards;
     }
 
-    //    public void printDeck() {
-//        for (Card card : cards) {
-//            System.out.println(card);
-//        }
-//    }
-
-
 }

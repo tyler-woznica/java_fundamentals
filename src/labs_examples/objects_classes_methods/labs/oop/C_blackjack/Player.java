@@ -6,13 +6,13 @@ public class Player {
     private Hand hand;
     private int potValue;
 
-    public Player(String name) {
+    public Player(String name, int potValue) {
         this.name = name;
         this.hand = new Hand();
         this.potValue = potValue;
     }
 
-    public boolean computer() {
+    public boolean computerAI() {
         return hand.getHandValue() < 16;
     }
 
