@@ -25,7 +25,22 @@ public class Deck {
     }
 
     public void deal(Player player) {
+        Random rand = new Random();
+        int n;
+        do {
+            n = rand.nextInt(52);
+        } while (usedCards.contains(n));
+        usedCards.add(n);
+        Card dealtCard = cards[n];
+        player.getHand().addCard(dealtCard);
+    }
 
+    public Card[] getCards() {
+        return cards;
+    }
+
+    public ArrayList<Integer> getUsedCards() {
+        return usedCards;
     }
 
 
