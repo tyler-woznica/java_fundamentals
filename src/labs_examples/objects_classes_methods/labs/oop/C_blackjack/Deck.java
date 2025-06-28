@@ -1,25 +1,33 @@
 package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 public class Deck {
-
-    Card[] cards = new Card[52];
-    ArrayList<Integer> usedCards = new ArrayList<>();
+    private Card[] cards;
+    private ArrayList<Integer> usedCards;
 
     public Deck() {
+        usedCards = new ArrayList<>();
+        cards = new Card[52];
         populateDeck();
     }
 
-    private void populateDeck () {
-        int index = 0;
-        for (char suit : Card.suits) {
-            for (int value = 1; value <= 13; value ++) {
-                cards[index++] = new Card(value, suit);
+    public void populateDeck() {
+        char[] suits = new char[]{'♠', '♦', '♥', '♣'};
+        int i = 0;
+        for (char suit : suits) {
+            for (int val = 1; val <= 13; val++) {
+                cards[i++] = new Card(val, suit);
             }
         }
     }
+
+    public void deal(Player player) {
+
+    }
+
 
 //    public void printDeck() {
 //        for (Card card : cards) {
@@ -27,13 +35,5 @@ public class Deck {
 //        }
 //    }
 
-    public Card deal() {
-        Random rand = new Random();
-        int n;
-        do {
-            n = rand.nextInt(52);
-        } while (usedCards.contains(n));
-        usedCards.add(n);
-        return cards[n];
-    }
+
 }

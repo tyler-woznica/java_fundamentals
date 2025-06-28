@@ -7,8 +7,9 @@ public class Player {
     private int potValue;
 
     public Player(String name) {
-        hand = new Hand();
         this.name = name;
+        this.hand = new Hand();
+        this.potValue = potValue;
     }
 
     public Hand getHand() {

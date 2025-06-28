@@ -4,15 +4,12 @@ import java.util.ArrayList;
 
 public class Hand {
 
-    private ArrayList<Card> cards;
+    public ArrayList<Card> cards;
     private int handValue;
 
     public Hand() {
         cards = new ArrayList<>();
-    }
-
-    public ArrayList<Card> getCards () {
-        return cards;
+        handValue = 0;
     }
 
 

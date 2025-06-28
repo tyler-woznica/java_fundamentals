@@ -2,7 +2,7 @@ package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 
 public class Card {
 
-    public static final char[] suits = new char[]{'♠', '♦', '♥', '♣'};
+
 
     int cardValue;
     char suit;
