@@ -31,5 +31,7 @@ public class Hand {
         return getHandValue() > 21;
     }
 
-
+    public void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
+    }
 }

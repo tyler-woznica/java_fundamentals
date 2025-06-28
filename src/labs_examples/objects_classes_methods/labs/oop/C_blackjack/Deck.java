@@ -43,8 +43,15 @@ public class Deck {
         return usedCards;
     }
 
+    public void setCards(Card[] cards) {
+        this.cards = cards;
+    }
 
-//    public void printDeck() {
+    public void setUsedCards(ArrayList<Integer> usedCards) {
+        this.usedCards = usedCards;
+    }
+
+    //    public void printDeck() {
 //        for (Card card : cards) {
 //            System.out.println(card);
 //        }
