@@ -65,7 +65,7 @@ public class BlackjackController {
                     if (computer.getHand().isBust()) {
                         System.out.println("\nComputer busted!");
                         computerDone = true;
-                    } else if (computer.computerAI()) {
+                    } else if (computer.computer()) {
                         System.out.println("\nComputer takes another card.");
                         deck.deal(computer);
                     } else {

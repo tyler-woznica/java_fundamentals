@@ -12,7 +12,7 @@ public class Player {
         this.potValue = potValue;
     }
 
-    public boolean computerAI() {
+    public boolean computer() {
         return hand.getHandValue() < 16;
     }
 
