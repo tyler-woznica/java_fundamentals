@@ -5,5 +5,10 @@ package labs_examples.exception_handling.labs;
  *
  *      1) Demonstrate a try/catch.
  *
+ * try {
+ *     someMethod();
+ * } catch (ArithmeticException) {
+ *     return 0;
+ * }
  */
 
