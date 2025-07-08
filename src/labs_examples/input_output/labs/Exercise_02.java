@@ -1,5 +1,7 @@
 package labs_examples.input_output.labs;
 
+import java.io.*;
+
 /**
  * Input/Output Exercise 2: File encryption
  *
@@ -12,3 +14,59 @@ package labs_examples.input_output.labs;
  *
  */
 
+class Exercise_02 {
+    public static void main(String[] args) {
+
+        String inFile = "src/labs_examples/input_output/files/char_data.txt";
+        String outFile = "src/labs_examples/input_output/files/char_data_crypt.txt";
+
+        try (BufferedReader reader =
+                     new BufferedReader(new FileReader(inFile));
+             BufferedWriter writer =
+                     new BufferedWriter(new FileWriter(outFile))
+                ) {
+
+            int ch;
+
+            while ((ch = reader.read()) != -1) {
+
+                char c = (char) ch;
+
+                if (c == 'a') {
+                    writer.write("-");
+                } else if (c == 'e') {
+                    writer.write('~');
+                } else {
+                    writer.write(c);
+                }
+            }
+
+            System.out.println("File encryption successful.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(outFile))) {
+
+            int ch;
+
+            System.out.println("Output decrypted");
+
+            while ((ch = reader.read()) != -1) {
+
+                char c = (char) ch;
+                if (c == '-') {
+                    System.out.println('a');
+                } else if (c == '~') {
+                    System.out.println('e');
+                } else {
+                    System.out.println(c);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
