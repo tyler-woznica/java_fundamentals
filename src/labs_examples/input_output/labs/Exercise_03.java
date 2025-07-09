@@ -52,6 +52,7 @@ class Exercise_03 {
                 ) {
             writer.write("Character data.\n");
             writer.write("This is line 2.");
+            System.out.println("Char stream complete.");
             writer.flush();
 
         } catch (IOException e) {
