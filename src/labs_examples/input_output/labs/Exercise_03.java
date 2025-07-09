@@ -1,8 +1,6 @@
 package labs_examples.input_output.labs;
 
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 
 /**
  * Input/Output Exercise 3: variety
@@ -16,15 +14,63 @@ import java.io.FileOutputStream;
 
 class Exercise_03 {
     public static void main(String[] args) {
-        String byteFile = "src/labs_examples/input_output/files/byte_data";
-        String charFile = "src/labs_examples/input_output/files/char_data.txt";
+        String byteFile = "src/labs_examples/input_output/files/ex03_byte_file.txt";
+        String charFile = "src/labs_examples/input_output/files/ex03_char_file.txt";
 
         try (
                 FileOutputStream fos = new FileOutputStream(byteFile);
                 BufferedOutputStream bos = new BufferedOutputStream(fos);
                 DataOutputStream dos = new DataOutputStream(bos);
                 ) {
-            dos.writ
+            dos.writeInt(123);
+            dos.writeDouble(12.34);
+            dos.writeUTF("Many bytes");
+            System.out.println("Byte stream complete");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        try (
+                FileInputStream fis = new FileInputStream(byteFile);
+                DataInputStream dis = new DataInputStream(fis);
+                ) {
+            int num = dis.readInt();
+            double val = dis.readDouble();
+            String txt = dis.readUTF();
+
+            System.out.println("Byte stream read");
+            System.out.println("Int: " + num);
+            System.out.println("Double: " + val);
+            System.out.println("String: " + txt);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (
+                FileWriter writer = new FileWriter(charFile);
+                FileReader reader = new FileReader(charFile);
+                ) {
+            writer.write("Character data.\n");
+            writer.write("This is line 2.");
+            writer.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (
+                BufferedReader br =
+                        new BufferedReader(new FileReader(charFile))
+                ) {
+            String line;
+            System.out.println("\nChar stream read:");
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
