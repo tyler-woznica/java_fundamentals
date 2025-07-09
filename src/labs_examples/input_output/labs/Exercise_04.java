@@ -1,7 +1,10 @@
 package labs_examples.input_output.labs;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
+import labs_examples.input_output.examples.csv_parser.Student;
+
+import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,40 +27,39 @@ import java.io.FileInputStream;
 class Exercise_04 {
     public static void main(String[] args) {
 
-        FileInputStream inputStream = null;
-        BufferedInputStream bufferedInputStream = null;
+        ArrayList<Client> clients = new ArrayList<>();
         String filePath = "src/labs_examples/input_output/files/ex4_client.csv";
 
+        try (BufferedReader br =
+                     new BufferedReader(new FileReader(filePath))) {
 
+            String line;
 
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                clients.add(mapValsToClientObj(values));
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (Client client : clients) {
+            System.out.println(client.toString());
+        }
 
     }
 
-    public class Client {
-        int clientNumber;
-        String lastName;
-        String firstName;
-        String type;
-        int accountAge;
+    private static Client mapValsToClientObj(String[] values) {
 
-        public Client (int cn, String last, String first, String type, int yr) {
-            this.clientNumber = cn;
-            this.lastName = last;
-            this.firstName =first;
-            this.type = type;
-            this.accountAge = yr;
-        }
+        Client client = new Client();
 
-        @Override
-        public String toString() {
-            return "Client{" +
-                    "clientNumber=" + clientNumber +
-                    ", lastName='" + lastName + '\'' +
-                    ", firstName='" + firstName + '\'' +
-                    ", type='" + type + '\'' +
-                    ", accountAge=" + accountAge +
-                    '}';
-        }
+        client.setClientNumber(Integer.parseInt(values[0]));
+        client.setLastName(values[1]);
+        client.setFirstName(values[2]);
+        client.setType(values[3]);
+        client.setAccountAge(Integer.parseInt(values[4]));
+
+        return client;
     }
-
 }
