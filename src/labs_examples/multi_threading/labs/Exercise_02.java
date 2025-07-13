@@ -10,7 +10,11 @@ class Exercise_02 {
     public static void main(String[] args) {
 
         MyThread thread1 = new MyThread();
+        thread1.setPriority(Thread.MAX_PRIORITY);
+
         thread1.start();
+
+        System.out.println("MyThread Priority: " + thread1.getPriority());
 
     }
 
