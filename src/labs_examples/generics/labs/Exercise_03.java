@@ -29,6 +29,9 @@ class Exercise_03 {
         swapElements(numbers, 0,2);
         System.out.println(Arrays.toString(numbers));
 
+        List<Integer> nums = Arrays.asList(2, 10, 4, 8, 6);
+        System.out.println(maxInRange(nums, 1, 4));
+
     }
 
     public static <T extends Number, U extends Number> double sumNums(T a, U b) {
@@ -57,8 +60,14 @@ class Exercise_03 {
 
     }
 
-    //public static <T extends Comparable<T>> T maxInRange(List<T> list, int begin, int end) {
-      //  T max =
-    //}
+    public static <T extends Comparable<T>> T maxInRange(List<T> list, int begin, int end) {
+        T max = list.get(begin);
+        for (int i = begin + 1; i < end; i++) {
+            if (list.get(i).compareTo(max) > 0) {
+                max = list.get(i);
+            }
+        }
+        return max;
+    }
 
 }
