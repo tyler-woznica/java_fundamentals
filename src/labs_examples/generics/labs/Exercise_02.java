@@ -9,5 +9,30 @@ package labs_examples.generics.labs;
 import java.util.ArrayList;
 
 class Demo{
+    public static void main(String[] args) {
+
+        ArrayList<Integer> intList = new ArrayList<>();
+        intList.add(987);
+        intList.add(435);
+        intList.add(105);
+
+        double intSum = Calc.sum(intList);
+        System.out.println(intSum);
+
+    }
+
+    class Calc {
+
+        public static <T extends Number> double sum(ArrayList<T> numbers) {
+            double total = 0;
+            for (T num : numbers) {
+                total += num.doubleValue();
+            }
+            return total;
+        }
+    }
+
+
+
 
 }
