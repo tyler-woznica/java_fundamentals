@@ -10,6 +10,9 @@ package labs_examples.enumerations.labs;
 
 class Exercise_01 {
     public static void main(String[] args) {
-
+        Dayta dayta = new Dayta();
+        dayta.dayMessage(Day.MONDAY);
+        dayta.dayMessage(Day.FRIDAY);
+        dayta.dayMessage(Day.SATURDAY);
     }
 }
