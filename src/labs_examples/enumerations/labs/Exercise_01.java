@@ -8,3 +8,8 @@ package labs_examples.enumerations.labs;
  *      of this enum from a separate class.
  */
 
+class Exercise_01 {
+    public static void main(String[] args) {
+
+    }
+}
