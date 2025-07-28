@@ -55,5 +55,4 @@ class Exercise_02 {
         System.out.println("Uppercase: " + unaryOperator.apply("hello world"));
 
     }
-
 }
