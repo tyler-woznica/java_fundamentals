@@ -7,7 +7,6 @@ import java.sql.*;
 
 public class JDBC_Example_1 {
 
-
     public static void main(String[] args)  {
 
         Connection connection = null;
