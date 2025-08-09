@@ -16,7 +16,6 @@ public class MySQLAccess {
     public static void main(String[] args) {
         MySQLAccess example = new MySQLAccess();
 
-
         try {
             example.readDataBase("JDBC Course 1", 3);
         } catch (Exception e){
@@ -48,7 +47,6 @@ public class MySQLAccess {
                 System.out.println(c.toString());
             }
 
-
             // PreparedStatements can use variables and are more efficient
             preparedStatement = connection
                     .prepareStatement("insert into  University.courses (name, units) " +
@@ -66,8 +64,6 @@ public class MySQLAccess {
             resultSet = preparedStatement.executeQuery();
 
             //writeResultSet(resultSet);
-
-
 
             //Remove again the insert comment
             preparedStatement = connection
