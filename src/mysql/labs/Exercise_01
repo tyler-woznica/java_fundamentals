@@ -35,7 +35,19 @@
  *          e. update a record in the student table
  *          f. add a record to the teacher table
  *
- *       8.) Export the schema to a dump file and copy it to this folder.
+ *            a. SELECT * FROM students;
+ *            b. SELECT * FROM teachers WHERE SUBJECT = 'math';
+ *            c. SELECT s.* FROM students s
+ *            JOIN teachers_students ts ON s.id = ts.teacher_student_student_id
+ *            JOIN teachers t ON ts.teacher_id = t.id WHERE t.id = 1;
+ *            d. SELECT s.* FROM students s
+ *            JOIN students_courses cs ON s.id = cs.student_id
+ *            JOIN courses c ON cs.course_id = c.id WHERE c.id = 1;
+ *            e. UPDATE students SET age = 21 WHERE id = 3;
+ *            f. INSERT INTO TEACHERS (first_name, last_name, subject)
+                 VALUES ('Francis', 'Frederick', 'finance');
+ *
+ *       8.) Export the schema to a dump file and copy it to this folder. DONE.
  *
  *
  */
