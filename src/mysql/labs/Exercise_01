@@ -45,7 +45,7 @@
  *            JOIN courses c ON cs.course_id = c.id WHERE c.id = 1;
  *            e. UPDATE students SET age = 21 WHERE id = 3;
  *            f. INSERT INTO TEACHERS (first_name, last_name, subject)
-                 VALUES ('Francis', 'Frederick', 'finance');
+ *                VALUES ('Francis', 'Frederick', 'finance');
  *
  *       8.) Export the schema to a dump file and copy it to this folder. DONE.
  *
