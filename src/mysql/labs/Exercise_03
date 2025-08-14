@@ -4,15 +4,42 @@
 *   Now that you have your air travel database all set up and populated, please demonstrate how to:
 *
 *       1.) Query all flights on a specific day
+* SELECT * FROM flights WHERE date >= '2025-09-01'  AND date < '2025-09-02';
 *       2.) Query all flights between two specific cities on a specific day
+* SELECT  * FROM flights WHERE date >= '2025-09-01' AND date < '2025-09-02'
+*  AND departure = 'Los Angeles' AND destination = 'New York';
 *       3.) Query all passengers on a specific flight between two specific cities today
+*
 *       4.) Query the flight information for a specific passenger on a specific flight
+* SELECT * FROM passengers p
+  JOIN tickets t ON p.ticket_id = t.id
+  JOIN flights f ON t.flight_id = f.id
+  WHERE p.first_name = 'Aaron' AND p.last_name = 'Anderson' AND f.id = 1;
 *       5.) Query the passenger information for a specific user on a specific flight yesterday
+*
 *       6.) Query the number of flights between two specific cities this week, month, and year
+* SELECT COUNT(*) AS flight_count FROM flights
+  WHERE departure = 'Los Angeles'
+    AND destination = 'New York'
+    AND date >= '2025-09-01'
+    AND date < '2025-09-08';
 *       7.) Query the number of passengers that travelled between two specific cities today, this week, month and year
+* SELECT COUNT(*) AS passenger_count FROM passengers p
+  JOIN tickets t ON p.ticket_id = t.id
+  JOIN flights f ON t.flight_id = f.id
+  WHERE departure = 'Los Angeles'
+    AND f.destination = 'New York'
+    AND f.date BETWEEN '2025-09-01' AND '2025-09-07';
 *       8.) Insert records for new flights between airports
+* INSERT INTO flights (duration_minutes, airline_name, plane_model, destination, departure, date)
+  VALUES (180, 'American Airlines', 'Boeing 787', 'Atlanta', 'Los Angeles', '2025-09-10 10:10:00');
 *       9.) Insert records for new tickets and passengers on specific flights
+* INSERT INTO tickets (class, flight_id)
+  VALUES ('first', 6);
+  INSERT INTO passengers (first_name, last_name, email, ticket_id)
+  VALUES ('Francis', 'Fratello', 'francis@fratello.com', 11);
 *       10.) Update meal preference (or something similar) for a specific passenger on a specific flight
+* UPDATE tickets SET class = 'business' WHERE id = 10;
 *       Bonus: Have some fun - get creative - what else can you do? Flex those SQL muscles and show us what
 *           you've got! :)
 *
