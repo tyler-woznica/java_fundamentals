@@ -1,8 +1,9 @@
 package mysql.labs;
 import mysql.examples.MySQLAccess;
 
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
-import java.util.ArrayList;
+
 
 /*
 *  MySQL Exercise 4:
@@ -22,14 +23,40 @@ import java.util.ArrayList;
 
 public class Exercise_04 {
 
-    private Connection connection = null;
-    private Statement statement = null;
-    private PreparedStatement preparedStatement = null;
-    private ResultSet resultSet = null;
-
     public static void main(String[] args) {
 
-        MySQLAccess exercise = new MySQLAccess();
+        Connection connection = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost/airline?user=root&password=<PASSWORD>&useSSL=false");
+
+            Statement statement;
+            statement = connection.createStatement();
+            ResultSet resultSet;
+            resultSet = statement.executeQuery(
+                    "select * from flights");
+            int duration;
+            String airline;
+            String departure;
+            String destination;
+            while (resultSet.next()) {
+                duration = resultSet.getInt("duration_minutes");
+                airline = resultSet.getString("airline_name");
+                departure = resultSet.getString("departure");
+                destination = resultSet.getString("destination");
+                System.out.println(airline + "  -  " + departure + " >> "
+                        + destination + "  -  Flight Time [" + (duration/60) + " hr]");
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+
+        } catch (Exception exception) {
+            System.out.println(exception);
+        }
         /*
         Just as a casual example - each of these operations should be in it's own method. Feel free to
         create all required classes/methods to accomplish this.
