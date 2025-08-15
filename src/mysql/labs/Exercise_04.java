@@ -1,6 +1,5 @@
 package mysql.labs;
 import mysql.examples.MySQLAccess;
-
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
@@ -30,49 +29,72 @@ public class Exercise_04 {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/airline?user=root&password=<PASSWORD>&useSSL=false");
+                    "jdbc:mysql://localhost/airline?user=root&password=099122T$ugu@&useSSL=false");
 
-            Statement statement;
-            statement = connection.createStatement();
-            ResultSet resultSet;
-            resultSet = statement.executeQuery(
-                    "select * from flights");
-            int duration;
-            String airline;
-            String departure;
-            String destination;
-            while (resultSet.next()) {
-                duration = resultSet.getInt("duration_minutes");
-                airline = resultSet.getString("airline_name");
-                departure = resultSet.getString("departure");
-                destination = resultSet.getString("destination");
-                System.out.println(airline + "  -  " + departure + " >> "
-                        + destination + "  -  Flight Time [" + (duration/60) + " hr]");
-            }
 
-            resultSet.close();
-            statement.close();
+            insertFlight(connection, 180, "United Airlines", "Boeing 787",
+                    "Dallas", "Los Angeles", "2025-09-10 10:00:00");
+            queryFlight(connection, "United Airlines");
+            updateFlightDuration(connection, "United Airlines", 320);
+            //deleteFlight(connection, "United Airlines");
+
             connection.close();
 
         } catch (Exception exception) {
             System.out.println(exception);
         }
-        /*
-        Just as a casual example - each of these operations should be in it's own method. Feel free to
-        create all required classes/methods to accomplish this.
 
-        createFlight(...);
-        queryFlight(...);
-        updateFlight(...);
-        deleteFlight(...);
-
-        createPassenger(...);
-        queryPassenger(...);
-        updatePassenger(...);
-        deletePassenger(...);
-
-        ...
-         */
     }
+    public static void insertFlight(Connection conn, int duration_minutes, String airline_name, String plane_model,
+                                                       String destination, String departure, String date) throws SQLException {
+        String sql = "INSERT INTO flights (duration_minutes, airline_name, plane_model, destination, departure, date) " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, duration_minutes);
+        stmt.setString(2, airline_name);
+        stmt.setString(3, plane_model);
+        stmt.setString(4, destination);
+        stmt.setString(5, departure);
+        stmt.setString(6, date);
+        stmt.executeUpdate();
+        stmt.close();
+        System.out.println("Flight inserted successfully!");
+    }
+
+    public static void queryFlight(Connection conn, String airline) throws SQLException {
+        String sql = "SELECT * FROM flights WHERE airline_name = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, airline);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            int duration = rs.getInt("duration_minutes");
+            String departure = rs.getString("departure");
+            String destination = rs.getString("destination");
+            System.out.println(rs.getString("airline_name") + " - " +
+                    departure + " >> " + destination + " - Flight Time [" +
+                    (duration / 60) + " hr]");
+        }
+        rs.close();
+        stmt.close();
+    }
+
+    public static void updateFlightDuration(Connection conn, String airline, int newDurationMinutes) throws SQLException {
+        String sql = "UPDATE flights SET duration_minutes = ? WHERE airline_name = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, newDurationMinutes);
+        stmt.setString(2, airline);
+        stmt.executeUpdate();
+        stmt.close();
+        System.out.println("Flight updated successfully!");
+    }
+
+    /*public static void deleteFlight(Connection conn, String airline) throws SQLException {
+        String sql = "DELETE FROM flights WHERE airline_name = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, airline);
+        stmt.executeUpdate();
+        stmt.close();
+        System.out.println("Flight deleted successfully!");
+    }*/
 
 }
