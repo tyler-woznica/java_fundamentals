@@ -29,14 +29,12 @@ public class Exercise_04 {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/airline?user=root&password=099122T$ugu@&useSSL=false");
-
-
-            insertFlight(connection, 180, "United Airlines", "Boeing 787",
+                    "jdbc:mysql://localhost/airline?user=root&password=<PASSWORD>@&useSSL=false");
+            insertFlight(connection, 50, 180, "United", "Boeing 787",
                     "Dallas", "Los Angeles", "2025-09-10 10:00:00");
-            queryFlight(connection, "United Airlines");
-            updateFlightDuration(connection, "United Airlines", 320);
-            //deleteFlight(connection, "United Airlines");
+            queryFlight(connection, "United");
+            updateFlightDuration(connection, 5, 240);
+            deleteCity(connection, "San Francisco");
 
             connection.close();
 
@@ -45,26 +43,27 @@ public class Exercise_04 {
         }
 
     }
-    public static void insertFlight(Connection conn, int duration_minutes, String airline_name, String plane_model,
+    public static void insertFlight(Connection conn, int id, int duration_minutes, String airline_name, String plane_model,
                                                        String destination, String departure, String date) throws SQLException {
-        String sql = "INSERT INTO flights (duration_minutes, airline_name, plane_model, destination, departure, date) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO flights (id, duration_minutes, airline_name, plane_model, destination, departure, date) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, duration_minutes);
-        stmt.setString(2, airline_name);
-        stmt.setString(3, plane_model);
-        stmt.setString(4, destination);
-        stmt.setString(5, departure);
-        stmt.setString(6, date);
+        stmt.setInt(1, id);
+        stmt.setInt(2, duration_minutes);
+        stmt.setString(3, airline_name);
+        stmt.setString(4, plane_model);
+        stmt.setString(5, destination);
+        stmt.setString(6, departure);
+        stmt.setString(7, date);
         stmt.executeUpdate();
         stmt.close();
         System.out.println("Flight inserted successfully!");
     }
 
-    public static void queryFlight(Connection conn, String airline) throws SQLException {
+    public static void queryFlight(Connection conn, String airline_name) throws SQLException {
         String sql = "SELECT * FROM flights WHERE airline_name = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, airline);
+        stmt.setString(1, airline_name);
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
             int duration = rs.getInt("duration_minutes");
@@ -78,23 +77,22 @@ public class Exercise_04 {
         stmt.close();
     }
 
-    public static void updateFlightDuration(Connection conn, String airline, int newDurationMinutes) throws SQLException {
-        String sql = "UPDATE flights SET duration_minutes = ? WHERE airline_name = ?";
+    public static void updateFlightDuration(Connection conn, int id, int newDurationMinutes) throws SQLException {
+        String sql = "UPDATE flights SET duration_minutes = ? WHERE id = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, newDurationMinutes);
-        stmt.setString(2, airline);
+        stmt.setInt(1, 5);
+        stmt.setInt(2, 240);
         stmt.executeUpdate();
         stmt.close();
         System.out.println("Flight updated successfully!");
     }
 
-    /*public static void deleteFlight(Connection conn, String airline) throws SQLException {
-        String sql = "DELETE FROM flights WHERE airline_name = ?";
+    public static void deleteCity(Connection conn, String city) throws SQLException {
+        String sql = "DELETE FROM cities WHERE city = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, airline);
+        stmt.setString(1, city);
         stmt.executeUpdate();
         stmt.close();
-        System.out.println("Flight deleted successfully!");
-    }*/
-
+        System.out.println("City deleted successfully!");
+    }
 }
