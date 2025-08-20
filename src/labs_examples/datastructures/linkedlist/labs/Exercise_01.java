@@ -5,6 +5,7 @@ package labs_examples.datastructures.linkedlist.labs;
  *
  *      Demonstrate your mastery of Java's built-in LinkedList class by demonstrating the following:
  *
+ *
  *      1) create a LinkedList (from Java's libraries)
  *      2) add()
  *      3) addAll()
@@ -21,3 +22,5 @@ package labs_examples.datastructures.linkedlist.labs;
  *      14) listIterator()
  *      15) clear()
  */
+
+
