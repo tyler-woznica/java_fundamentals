@@ -15,5 +15,4 @@ public class UsingLinkedList {
 
         System.out.println(myLinkedList.peek());
     }
-
 }
