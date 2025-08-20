@@ -10,6 +10,7 @@ public class CustomLinkedList<T extends Comparable<T>> {
    * Defines a Node for a Linked List Accepts any data which can be compared (to
    * enable searching)
    */
+
   class Node<T extends Comparable<T>> {
     public T data;
     public Node<T> next;
@@ -19,6 +20,7 @@ public class CustomLinkedList<T extends Comparable<T>> {
      *
      * @param data The value to be stored
      */
+
     Node(T data) {
       this.data = data;
       this.next = null;
