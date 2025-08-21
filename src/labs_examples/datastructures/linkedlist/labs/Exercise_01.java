@@ -60,13 +60,22 @@ public class Exercise_01 {
         viewLine();
 
         // 12) remove()
-
+        System.out.println("Remove the value from index 1.");
+        myLinkedList.remove(1);
+        viewLine();
 
         // 13) contains()
+        System.out.println("Check to see if the LinkedList contains the number 12?");
+        System.out.println(myLinkedList.contains(12));
 
         // 14) listIterator()
+        System.out.println();
+        System.out.println(myLinkedList.listIterator(0) + "\n");
 
         // 15) clear()
+        System.out.println("Clearing the list!");
+        myLinkedList.clear();
+        viewLine();
 
     }
 
