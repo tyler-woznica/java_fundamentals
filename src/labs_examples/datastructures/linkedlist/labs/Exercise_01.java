@@ -14,10 +14,12 @@ public class Exercise_01 {
         List<Integer> listOne = Arrays.asList(2, 3);
 
         // 2) add()
+        System.out.println("Adding first value to LinkedList");
         myLinkedList.add(1);
         viewLine();
 
         // 3) addAll()
+        System.out.println("Adding array of two values at index 1.");
         try {
             myLinkedList.addAll(1, listOne);
             viewLine();
@@ -26,22 +28,39 @@ public class Exercise_01 {
         }
 
         // 4) addFirst()
+        System.out.println("Adding a value to the beginning of the LinkedList");
+        myLinkedList.addFirst(0);
+        viewLine();
 
         // 5) addLast()
+        System.out.println("Adding a value to the end of the LinkedList");
+        myLinkedList.addLast(4);
+        viewLine();
 
         // 6) getFirst()
+        System.out.println("Current first val: " + myLinkedList.getFirst() + "\n");
 
         // 7) getLast()
+        System.out.println("Current last val: " + myLinkedList.getLast() + "\n");
 
         // 8) get()
+        System.out.println("Val at index 1 is: " + myLinkedList.get(1) + "\n");
 
         // 9) set()
+        myLinkedList.set(1, 100);
+        System.out.println("Val at index 1 is now : " + myLinkedList.get(1) + "\n");
+        viewLine();
 
         // 10) push()
+        myLinkedList.push(5);
+        viewLine();
 
         // 11) pop()
+        System.out.println("Val of popped element: " + myLinkedList.pop());
+        viewLine();
 
         // 12) remove()
+
 
         // 13) contains()
 
@@ -53,8 +72,8 @@ public class Exercise_01 {
 
     public static void viewLine () {
         System.out.println("** Updated values **");
-        myLinkedList.forEach(System.out::println);
-        System.out.println();
+        myLinkedList.forEach(x -> System.out.print(x + " "));
+        System.out.println("\n");
     }
 
 }
