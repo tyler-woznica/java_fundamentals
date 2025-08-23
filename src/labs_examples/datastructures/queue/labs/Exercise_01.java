@@ -1,5 +1,8 @@
 package labs_examples.datastructures.queue.labs;
 
+
+import java.util.PriorityQueue;
+
 /**
  *      Demonstrate your mastery of Java's built-in Queue interface. You'll need to do a little 
  *      research here. What classes can you import that implement the Queue interface? Find one
@@ -9,3 +12,17 @@ package labs_examples.datastructures.queue.labs;
  *      1) instantiate a new Queue
  *      2) demonstrate the use of EVERY method in the Queue class you're implementing 
  */
+
+public class Exercise_01 {
+
+    public static void main(String[] args) {
+
+        PriorityQueue<String> myQueue = new PriorityQueue<>();
+
+    }
+
+
+
+
+
+}
