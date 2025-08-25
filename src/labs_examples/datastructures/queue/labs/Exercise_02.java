@@ -1,6 +1,6 @@
 package labs_examples.datastructures.queue.labs;
 
-import labs_examples.datastructures.linkedlist.examples.CustomLinkedList;
+
 
 /**
  *      Queues - Exercise_02
