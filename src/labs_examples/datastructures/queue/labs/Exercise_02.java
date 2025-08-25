@@ -1,5 +1,7 @@
 package labs_examples.datastructures.queue.labs;
 
+import labs_examples.datastructures.linkedlist.examples.CustomLinkedList;
+
 /**
  *      Queues - Exercise_02
  *
@@ -16,3 +18,8 @@ package labs_examples.datastructures.queue.labs;
  *      6) contain a method to print out the data of all elements in the Queue
  *
  */
+
+public class Exercise_02 {
+
+
+}
