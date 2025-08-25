@@ -24,4 +24,9 @@ public class Exercise_03 {
             return data.toString() + " -> ";
         }
     }
+
+    public interface List<T> {
+        void insertAtHead(T data);
+        void insertAtTail(T data);
+    }
 }
