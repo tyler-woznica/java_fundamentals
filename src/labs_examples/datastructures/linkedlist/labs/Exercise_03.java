@@ -14,19 +14,13 @@ public class Exercise_03 {
 
 
 
-    public class Node <T> {
-        private final T data;
-        private Node<T> previous;
-        private Node<T> next;
+    class Node {
+        int data;
+        Node prev;
+        Node next;
 
-        @Override
-        public String toString() {
-            return data.toString() + " -> ";
+        Node(int data) {
+            this.data = data;
         }
-    }
-
-    public interface List<T> {
-        void insertAtHead(T data);
-        void insertAtTail(T data);
     }
 }
