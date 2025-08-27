@@ -20,10 +20,22 @@ public class Custom_HashMap {
                 this.key = key;
                 this.value = value;
             }
+
+            public K getKey() {
+                return key;
+            }
+
+            public V getValue() {
+                return value;
+            }
+
+            public void setValue(V value) {
+                this.value = value;
+            }
         }
 
         // create the Entry table
-        private Entry<K, V>[] table = new Entry[10];
+        private Entry<K,V>[] table = new Entry[10];
 
         // hashmod and return the index
         private int hash(K key) {
@@ -61,7 +73,7 @@ public class Custom_HashMap {
 
         private void resize() {
             // create copy of existing table name it "old"
-            Entry<K, V> old = table;
+            Entry<K,V>[] old = table;
             // create a new table that is twice the size
             table = new Entry[old.length * 2];
 
@@ -92,6 +104,7 @@ public class Custom_HashMap {
             // call hash() to get index for the key
             int index = hash(key);
 
+
             // return null if nothing at key
             if (table[index] == null) {
                 return null;
@@ -111,7 +124,7 @@ public class Custom_HashMap {
             }
 
             // if you get there, the key has been found
-            return p.getValue();
+            return entry.getValue();
         }
 
         // remove the pair at given key from hashmap
@@ -172,29 +185,6 @@ public class Custom_HashMap {
                 }
             }
             return keys;
-        }
-
-        class Entry<K, V> {
-            private K key;
-            private V value;
-            Entry next = null;
-
-            Entry(K key, V value) {
-                this.key = key;
-                this.value = value;
-            }
-
-            public K getKey() {
-                return key;
-            }
-
-            public V getValue() {
-                return value;
-            }
-
-            public void setValue(V value) {
-                this.value = value;
-            }
         }
     }
 }
